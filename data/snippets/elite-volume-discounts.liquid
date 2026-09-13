@@ -1,0 +1,203 @@
+{% comment %}
+  Elite Quantity Breaks / Tiered Pricing Component (CRO Boost for AOV)
+{% endcomment %}
+
+<style>
+  .elite-bundle-wrapper {
+    margin: 22px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .elite-bundle-title {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: #0F172A;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .elite-bundle-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .elite-bundle-option {
+    position: relative;
+    border: 2px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 14px 18px;
+    background: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  .elite-bundle-option:hover {
+    border-color: #94A3B8;
+  }
+  .elite-bundle-option.is-selected {
+    border-color: #10B981;
+    background: #F0FDF4;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.15);
+  }
+  .elite-bundle-radio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .elite-custom-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease;
+    flex-shrink: 0;
+  }
+  .elite-bundle-option.is-selected .elite-custom-radio {
+    border-color: #10B981;
+  }
+  .elite-bundle-option.is-selected .elite-custom-radio::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #10B981;
+    border-radius: 50%;
+  }
+  .elite-bundle-info h4 {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #1E293B;
+  }
+  .elite-bundle-info p {
+    margin: 2px 0 0 0;
+    font-size: 0.8rem;
+    color: #64748B;
+  }
+  .elite-bundle-pricing {
+    text-align: right;
+  }
+  .elite-bundle-price {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0F172A;
+  }
+  .elite-bundle-option.is-selected .elite-bundle-price {
+    color: #047857;
+  }
+  .elite-bundle-savings {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #10B981;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 2px;
+  }
+  .elite-bundle-tag {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    color: #FFFFFF;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+  }
+  .elite-bundle-tag.tag-hot {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  }
+</style>
+
+<div class="elite-bundle-wrapper">
+  <div class="elite-bundle-title">
+    <span>🎁</span> Descuentos por Cantidad
+  </div>
+
+  <div class="elite-bundle-grid" id="eliteBundleGrid">
+    <!-- Tier 1: 1 Unidad -->
+    <div class="elite-bundle-option" data-qty="1" data-discount="0">
+      <div class="elite-bundle-radio">
+        <div class="elite-custom-radio"></div>
+        <div class="elite-bundle-info">
+          <h4>Comprar 1 Unidad</h4>
+          <p>Precio Regular</p>
+        </div>
+      </div>
+      <div class="elite-bundle-pricing">
+        <div class="elite-bundle-price">{{ product.price | money }}</div>
+      </div>
+    </div>
+
+    <!-- Tier 2: 2 Unidades (15% OFF - Más Popular) -->
+    <div class="elite-bundle-option is-selected" data-qty="2" data-discount="15">
+      <span class="elite-bundle-tag">🔥 MÁS POPULAR • 15% OFF</span>
+      <div class="elite-bundle-radio">
+        <div class="elite-custom-radio"></div>
+        <div class="elite-bundle-info">
+          <h4>Comprar 2 Unidades</h4>
+          <p>Ideal para Regalo o Pareja</p>
+        </div>
+      </div>
+      <div class="elite-bundle-pricing">
+        <div class="elite-bundle-price">{{ product.price | times: 2 | times: 0.85 | money }}</div>
+        <span class="elite-bundle-savings">Ahorras 15%</span>
+      </div>
+    </div>
+
+    <!-- Tier 3: 3 Unidades (25% OFF - Mejor Ahorro) -->
+    <div class="elite-bundle-option" data-qty="3" data-discount="25">
+      <span class="elite-bundle-tag tag-hot">👑 MEJOR AHORRO • 25% OFF</span>
+      <div class="elite-bundle-radio">
+        <div class="elite-custom-radio"></div>
+        <div class="elite-bundle-info">
+          <h4>Comprar 3 Unidades</h4>
+          <p>Máximo Descuento + Envío VIP</p>
+        </div>
+      </div>
+      <div class="elite-bundle-pricing">
+        <div class="elite-bundle-price">{{ product.price | times: 3 | times: 0.75 | money }}</div>
+        <span class="elite-bundle-savings">Ahorras 25%</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var grid = document.getElementById('eliteBundleGrid');
+    if (!grid) return;
+    
+    var options = grid.querySelectorAll('.elite-bundle-option');
+    options.forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        options.forEach(function(o) { o.classList.remove('is-selected'); });
+        opt.classList.add('is-selected');
+
+        var qty = parseInt(opt.getAttribute('data-qty') || '1', 10);
+        
+        // Update Shopify native quantity input
+        var form = document.querySelector('form[action*="/cart/add"]');
+        if (form) {
+          var qtyInput = form.querySelector('input[name="quantity"]');
+          if (qtyInput) {
+            qtyInput.value = qty;
+            qtyInput.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+      });
+    });
+  })();
+</script>

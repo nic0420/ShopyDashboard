@@ -1,0 +1,28 @@
+# Environment & Secrets (NEVER COMMIT)
+.env
+.env.local
+.env.*.local
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+
+# Vercel output
+.vercel/
+
+# Runtime logs
+error_log.txt
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db

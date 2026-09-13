@@ -1,0 +1,19 @@
+<div class="legal-page-container" style="max-width: 800px; margin: 0 auto; padding: 24px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1F2937;">
+  <h1 style="font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 8px;">Rastreo y Seguimiento de tu Pedido</h1>
+  <p style="color: #6B7280; font-size: 0.95rem; margin-bottom: 24px;">Ingresa tu número de seguimiento para conocer la ubicación y estado de tu paquete en tiempo real.</p>
+
+  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 28px 24px; text-align: center; margin-bottom: 32px;">
+    <h3 style="margin: 0 0 12px 0; color: #0F172A; font-size: 1.15rem; font-weight: 700;">Consulta en Vivo</h3>
+    <p style="color: #64748B; font-size: 0.9rem; margin-bottom: 20px;">Pega tu código de guía (ej. CJ123456789YQ o número postal nacional) a continuación:</p>
+    
+    <div style="display: flex; justify-content: center; gap: 10px; max-width: 480px; margin: 0 auto; flex-wrap: wrap;">
+      <input type="text" id="trackNumberInput" placeholder="Ej: CJ8899112233..." style="flex: 1; min-width: 220px; padding: 12px 16px; border: 1px solid #CBD5E1; border-radius: 8px; font-size: 0.95rem; outline: none;">
+      <button type="button" onclick="var code = document.getElementById('trackNumberInput').value.trim(); if(code) { window.open('https://t.17track.net/es#nums=' + encodeURIComponent(code), '_blank'); } else { alert('Por favor ingresa tu número de guía'); }" style="background: #10B981; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.95rem;">
+        🔍 Rastrear Envío
+      </button>
+    </div>
+  </div>
+
+  <h2 style="font-size: 1.2rem; font-weight: 700; color: #111827;">¿No encuentras tu número de rastreo?</h2>
+  <p style="color: #4B5563;">El código de seguimiento se envía automáticamente a tu correo electrónico en un plazo de 24 a 48 horas hábiles tras realizar tu compra. Si no lo has recibido, revisa tu carpeta de correo no deseado (Spam) o escríbenos a nuestro equipo de soporte.</p>
+</div>

@@ -1,0 +1,200 @@
+[
+  {
+    "timestamp": "2026-09-12 20:48:00",
+    "items_scanned": 2,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-DROP SHI-01",
+        "product_title": "Drop Shipping Ultrasonic Facial Cleansing Brush Waterproof",
+        "shopify_product_id": "gid://shopify/Product/8899112233",
+        "old_price": 36.25,
+        "new_price": 21.25,
+        "old_stock": 100,
+        "new_stock": 120,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 1.81,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-12 20:47:58",
+    "items_scanned": 1,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-CINTURON-01",
+        "product_title": "Cintur\u00f3n de Nylon para Halterofilia Pro",
+        "shopify_product_id": "gid://shopify/Product/9794800484581",
+        "old_price": 20.0,
+        "new_price": 30.0,
+        "old_stock": 100,
+        "new_stock": 85,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 0.0,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-11 23:22:18",
+    "items_scanned": 2,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-DROP SHI-01",
+        "product_title": "Drop Shipping Ultrasonic Facial Cleansing Brush Waterproof",
+        "shopify_product_id": "gid://shopify/Product/8899112233",
+        "old_price": 36.25,
+        "new_price": 21.25,
+        "old_stock": 100,
+        "new_stock": 120,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 1.39,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-11 23:22:16",
+    "items_scanned": 1,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-CINTURON-01",
+        "product_title": "Cintur\u00f3n de Nylon para Halterofilia Pro",
+        "shopify_product_id": "gid://shopify/Product/9794800484581",
+        "old_price": 20.0,
+        "new_price": 30.0,
+        "old_stock": 100,
+        "new_stock": 85,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 0.0,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-11 23:19:08",
+    "items_scanned": 2,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-DROP SHI-01",
+        "product_title": "Drop Shipping Ultrasonic Facial Cleansing Brush Waterproof",
+        "shopify_product_id": "gid://shopify/Product/8899112233",
+        "old_price": 36.25,
+        "new_price": 21.25,
+        "old_stock": 100,
+        "new_stock": 120,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 1.65,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-11 23:19:07",
+    "items_scanned": 1,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-CINTURON-01",
+        "product_title": "Cintur\u00f3n de Nylon para Halterofilia Pro",
+        "shopify_product_id": "gid://shopify/Product/9794800484581",
+        "old_price": 20.0,
+        "new_price": 30.0,
+        "old_stock": 100,
+        "new_stock": 85,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 0.0,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-11 23:09:32",
+    "items_scanned": 2,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-DROP SHI-01",
+        "product_title": "Drop Shipping Ultrasonic Facial Cleansing Brush Waterproof",
+        "shopify_product_id": "gid://shopify/Product/8899112233",
+        "old_price": 36.25,
+        "new_price": 21.25,
+        "old_stock": 100,
+        "new_stock": 120,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 1.49,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-11 23:07:34",
+    "items_scanned": 2,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-DROP SHI-01",
+        "product_title": "Drop Shipping Ultrasonic Facial Cleansing Brush Waterproof",
+        "shopify_product_id": "gid://shopify/Product/8899112233",
+        "old_price": 36.25,
+        "new_price": 21.25,
+        "old_stock": 100,
+        "new_stock": 120,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 2.44,
+    "status": "SUCCESS"
+  },
+  {
+    "timestamp": "2026-09-11 23:07:31",
+    "items_scanned": 1,
+    "items_updated": 1,
+    "price_adjustments": 1,
+    "stockouts_detected": 0,
+    "changes": [
+      {
+        "sku": "DS-CINTURON-01",
+        "product_title": "Cintur\u00f3n de Nylon para Halterofilia Pro",
+        "shopify_product_id": "gid://shopify/Product/9794800484581",
+        "old_price": 20.0,
+        "new_price": 30.0,
+        "old_stock": 100,
+        "new_stock": 85,
+        "status": "PRICE_UPDATED",
+        "notes": "Precio recalculado por variaci\u00f3n de costo mayorista"
+      }
+    ],
+    "duration_sec": 0.0,
+    "status": "SUCCESS"
+  }
+]

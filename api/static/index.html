@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopify Multi-Agent Dropshipping Dashboard</title>
+  <meta name="description" content="Panel de control en tiempo real para el ecosistema multi-agente de dropshipping con Shopify, IA y Auto-Fulfillment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🛍️</div>
+        <div class="brand-text">
+          <h2>Shopify Bot</h2>
+          <span class="badge badge-accent">Multi-Agent AI</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-tab="overview" id="nav-overview">
+          <span class="nav-icon">📊</span>
+          <span>Visión General</span>
+        </button>
+        <button class="nav-item" data-tab="pipeline" id="nav-pipeline">
+          <span class="nav-icon">🚀</span>
+          <span>Ejecutor Pipeline</span>
+        </button>
+        <button class="nav-item" data-tab="orders" id="nav-orders">
+          <span class="nav-icon">📦</span>
+          <span>Auto-Fulfillment</span>
+        </button>
+        <button class="nav-item" data-tab="catalog" id="nav-catalog">
+          <span class="nav-icon">📑</span>
+          <span>Catálogo de Tienda</span>
+        </button>
+        <button class="nav-item" data-tab="logs" id="nav-logs">
+          <span class="nav-icon">📜</span>
+          <span>Registro de Logs</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="store-info">
+          <div class="store-indicator online"></div>
+          <div class="store-details">
+            <span class="store-label">Tienda Objetivo</span>
+            <strong class="store-domain" id="sidebar-shop-domain">da6gne-6x.myshopify.com</strong>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Top Navbar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 id="page-title">Visión General del Sistema</h1>
+          <p class="subtitle" id="page-subtitle">Monitoreo en tiempo real del ciclo de vida multi-agente de dropshipping.</p>
+        </div>
+        <div class="topbar-right">
+          <div class="mode-pill" id="mode-badge">
+            <span class="pulse-dot"></span>
+            <span id="mode-text">MODO LIVE CONECTADO</span>
+          </div>
+          <button class="btn btn-primary" id="btn-quick-sync">
+            <span>🔄</span> Actualizar Datos
+          </button>
+        </div>
+      </header>
+
+      <!-- Tab 1: Overview Dashboard -->
+      <section class="tab-content active" id="tab-overview">
+        <!-- KPI Metrics Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Productos en Catálogo</span>
+              <span class="kpi-icon">🏷️</span>
+            </div>
+            <div class="kpi-value" id="kpi-products-count">0</div>
+            <div class="kpi-subtext">Optimizados con SEO e IA</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Órdenes Despachadas</span>
+              <span class="kpi-icon">📦</span>
+            </div>
+            <div class="kpi-value" id="kpi-orders-count">0</div>
+            <div class="kpi-subtext">Auto-Fulfillment por API</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Tracking Sincronizados</span>
+              <span class="kpi-icon">🔗</span>
+            </div>
+            <div class="kpi-value" id="kpi-tracking-count">0</div>
+            <div class="kpi-subtext">Shopify GraphQL fulfillment</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Estado de Conexión</span>
+              <span class="kpi-icon">⚡</span>
+            </div>
+            <div class="kpi-value text-emerald" id="kpi-system-status">ONLINE</div>
+            <div class="kpi-subtext">OAuth 2.0 & Webhooks Activos</div>
+          </div>
+        </div>
+
+        <!-- Architecture Flow Banner -->
+        <div class="card architecture-card">
+          <div class="card-header">
+            <h3>Flujo de Orquestación Multi-Agente</h3>
+            <span class="badge badge-outline">Pipeline Activo</span>
+          </div>
+          <div class="pipeline-stepper">
+            <div class="step-box">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <strong>Catalog Agent</strong>
+                <p>Ingesta CSV + Copywriting LLM + Títulos SEO</p>
+              </div>
+            </div>
+            <div class="step-arrow">➔</div>
+            <div class="step-box">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <strong>Art Agent</strong>
+                <p>Prompts Visuales + CDN Staged Uploads</p>
+              </div>
+            </div>
+            <div class="step-arrow">➔</div>
+            <div class="step-box">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <strong>Liquid Coder Agent</strong>
+                <p>Inyección de Snippets & Templates Liquid</p>
+              </div>
+            </div>
+            <div class="step-arrow">➔</div>
+            <div class="step-box">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <strong>Fulfillment Agent</strong>
+                <p>Webhook HMAC + REST PO + Sync Tracking</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Columns Layout: Recent Orders & Quick Actions -->
+        <div class="grid-2col">
+          <div class="card">
+            <div class="card-header">
+              <h3>Últimas Órdenes Procesadas</h3>
+              <button class="btn btn-sm btn-ghost" id="btn-view-all-orders">Ver todas</button>
+            </div>
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Orden #</th>
+                    <th>Cliente</th>
+                    <th>PO Proveedor</th>
+                    <th>Tracking</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody id="overview-orders-tbody">
+                  <tr>
+                    <td colspan="5" class="empty-state">No hay órdenes registradas aún. Haz clic en 'Simular Compra' para probar.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Acciones Rápidas</h3>
+            </div>
+            <div class="quick-actions-list">
+              <div class="action-item">
+                <div class="action-info">
+                  <strong>Simular Webhook de Compra</strong>
+                  <p>Envía un payload de prueba firmado a /webhook/shopify/order.</p>
+                </div>
+                <button class="btn btn-secondary" id="btn-quick-simulate-order">Simular Compra</button>
+              </div>
+
+              <div class="action-item">
+                <div class="action-info">
+                  <strong>Sincronizar Stock y Precios</strong>
+                  <p>Worker que actualiza precios (2.5x) e inventarios en Shopify.</p>
+                </div>
+                <button class="btn btn-primary" id="btn-quick-sync-inventory" style="background: linear-gradient(135deg, var(--accent-indigo), var(--accent-blue));">Sincronizar Stock</button>
+              </div>
+
+              <div class="action-item">
+                <div class="action-info">
+                  <strong>Ejecutar Ingesta de Catálogo</strong>
+                  <p>Procesa data/catalogo_proveedor.csv en la tienda.</p>
+                </div>
+                <button class="btn btn-primary" id="btn-quick-run-pipeline">Lanzar Ingesta</button>
+              </div>
+
+              <div class="action-item">
+                <div class="action-info">
+                  <strong>Abrir Admin de Shopify</strong>
+                  <p>Acceso directo al panel de control de tu tienda.</p>
+                </div>
+                <a href="https://admin.shopify.com/store/da6gne-6x/products" target="_blank" class="btn btn-outline" id="btn-open-shopify-admin">
+                  Ir a Shopify ↗
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 2: Pipeline Runner -->
+      <section class="tab-content" id="tab-pipeline">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Ejecutor de Pipeline Multi-Agente por Lotes</h3>
+              <p class="card-desc">Selecciona un archivo de catálogo o introduce un producto para ejecutar la transformación completa.</p>
+            </div>
+          </div>
+
+          <div class="pipeline-controls">
+            <div class="form-group">
+              <label for="pipeline-input-file">Archivo de Entrada</label>
+              <select id="pipeline-input-file" class="form-control">
+                <option value="data/catalogo_proveedor.csv">data/catalogo_proveedor.csv (3 productos fitness)</option>
+                <option value="data/test_llm.csv">data/test_llm.csv (1 producto de prueba)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="pipeline-mode">Modo de Ejecución</label>
+              <select id="pipeline-mode" class="form-control">
+                <option value="live">Producción Real (--live)</option>
+                <option value="dry-run">Simulación / Sandbox (--dry-run)</option>
+              </select>
+            </div>
+
+            <div class="form-group action-group">
+              <button class="btn btn-primary btn-lg" id="btn-start-pipeline">
+                <span>▶</span> Iniciar Ejecución del Pipeline
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Progress Box -->
+          <div class="pipeline-progress-box" id="pipeline-progress-box" style="display: none;">
+            <div class="progress-header">
+              <span class="progress-title" id="pipeline-status-text">Iniciando orquestación...</span>
+              <span class="progress-percent" id="pipeline-status-percent">0%</span>
+            </div>
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill" id="pipeline-progress-bar" style="width: 0%;"></div>
+            </div>
+            <div class="terminal-log" id="pipeline-terminal-output"></div>
+          </div>
+
+          <!-- Execution Results Summary Container -->
+          <div class="results-container" id="pipeline-results-container" style="display: none;">
+            <h4>Resultados de la Ingesta</h4>
+            <div class="results-grid" id="pipeline-results-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 3: Orders & Auto-Fulfillment -->
+      <section class="tab-content" id="tab-orders">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Historial de Pedidos y Auto-Fulfillment</h3>
+              <p class="card-desc">Monitoreo de webhooks orders/create entrantes, órdenes de compra a proveedores y sincronización de tracking.</p>
+            </div>
+            <button class="btn btn-secondary" id="btn-simulate-order-tab">
+              <span>⚡</span> Simular Orden de Compra
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table class="data-table" id="orders-full-table">
+              <thead>
+                <tr>
+                  <th>Shopify Order</th>
+                  <th>Fecha</th>
+                  <th>Cliente</th>
+                  <th>Destino</th>
+                  <th>Items</th>
+                  <th>PO Proveedor</th>
+                  <th>Tracking Code</th>
+                  <th>Carrier</th>
+                  <th>Shopify Sync</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="orders-tbody">
+                <tr>
+                  <td colspan="10" class="empty-state">Cargando órdenes...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 4: Product Catalog -->
+      <section class="tab-content" id="tab-catalog">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Catálogo de Productos en Shopify</h3>
+              <p class="card-desc">Productos optimizados con títulos SEO de alta conversión, copy generado con IA y assets en CDN.</p>
+            </div>
+            <button class="btn btn-outline" id="btn-refresh-catalog">Refrescar Catálogo</button>
+          </div>
+
+          <div class="catalog-grid" id="catalog-products-grid">
+            <div class="empty-state-box">Cargando productos del catálogo...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 5: Logs Viewer -->
+      <section class="tab-content" id="tab-logs">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <h3>Registro de Incidentes y Logs (error_log.txt)</h3>
+              <p class="card-desc">Historial en tiempo real de excepciones capturadas, errores de stock del proveedor (400) o balance (402).</p>
+            </div>
+            <button class="btn btn-sm btn-outline" id="btn-refresh-logs">Actualizar Logs</button>
+          </div>
+
+          <div class="terminal-container">
+            <pre class="terminal-content" id="error-logs-content">Cargando registro de logs...</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+{% comment %}
+  Elite Live Social Proof & Recent Sales Popups (High Trust & Conversion)
+{% endcomment %}
+
+<style>
+  .elite-social-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 12px 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 9998;
+    max-width: 340px;
+    transform: translateY(140%);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .elite-social-toast.is-active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .elite-social-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+  .elite-social-details {
+    flex: 1;
+    overflow: hidden;
+  }
+  .elite-social-user {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .elite-social-badge {
+    color: #10B981;
+    font-size: 0.75rem;
+  }
+  .elite-social-product {
+    font-size: 0.8rem;
+    color: #475569;
+    margin: 2px 0 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .elite-social-time {
+    font-size: 0.72rem;
+    color: #94A3B8;
+    margin-top: 2px;
+  }
+  .elite-social-close {
+    background: none;
+    border: none;
+    color: #94A3B8;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 2px;
+    line-height: 1;
+  }
+  .elite-social-close:hover {
+    color: #334155;
+  }
+  @media (max-width: 640px) {
+    .elite-social-toast {
+      bottom: 74px; /* Above sticky add to cart */
+      left: 12px;
+      right: 12px;
+      max-width: none;
+    }
+  }
+</style>
+
+<div id="eliteSocialToast" class="elite-social-toast">
+  <div class="elite-social-avatar" id="socialAvatar">🛍️</div>
+  <div class="elite-social-details">
+    <div class="elite-social-user">
+      <span id="socialBuyer">Mateo</span> de <span id="socialCity">Madrid</span>
+      <span class="elite-social-badge" title="Compra Verificada">✔</span>
+    </div>
+    <div class="elite-social-product" id="socialProduct">Cepillo Sónico Facial Pro</div>
+    <div class="elite-social-time" id="socialTime">compró hace 4 min</div>
+  </div>
+  <button type="button" class="elite-social-close" onclick="document.getElementById('eliteSocialToast').classList.remove('is-active');">✕</button>
+</div>
+
+<script>
+  (function() {
+    var toast = document.getElementById('eliteSocialToast');
+    if (!toast) return;
+
+    var buyers = [
+      { name: "Mateo", city: "Madrid", avatar: "🔥" },
+      { name: "Sofía", city: "Barcelona", avatar: "✨" },
+      { name: "Carlos", city: "Valencia", avatar: "⚡" },
+      { name: "Valentina", city: "Sevilla", avatar: "💎" },
+      { name: "Lucas", city: "Bilbao", avatar: "🏆" },
+      { name: "Camila", city: "Málaga", avatar: "🌟" }
+    ];
+
+    var products = [
+      "{{ product.title | default: 'Artículo Más Vendido' }}",
+      "Colección Premium de Élite",
+      "{{ product.title | default: 'Pack de Alta Demanda' }}"
+    ];
+
+    var buyerEl = document.getElementById('socialBuyer');
+    var cityEl = document.getElementById('socialCity');
+    var productEl = document.getElementById('socialProduct');
+    var timeEl = document.getElementById('socialTime');
+    var avatarEl = document.getElementById('socialAvatar');
+
+    function showRandomSale() {
+      var b = buyers[Math.floor(Math.random() * buyers.length)];
+      var p = products[Math.floor(Math.random() * products.length)];
+      var minAgo = Math.floor(Math.random() * 8) + 2;
+
+      buyerEl.textContent = b.name;
+      cityEl.textContent = b.city;
+      productEl.textContent = p;
+      timeEl.textContent = "compró hace " + minAgo + " min";
+      avatarEl.textContent = b.avatar;
+
+      toast.classList.add('is-active');
+
+      setTimeout(function() {
+        toast.classList.remove('is-active');
+      }, 5500);
+    }
+
+    // Initial trigger after 4s, then loop every 16s
+    setTimeout(showRandomSale, 4000);
+    setInterval(showRandomSale, 16000);
+  })();
+</script>
