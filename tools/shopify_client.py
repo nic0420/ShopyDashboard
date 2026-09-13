@@ -2,6 +2,7 @@
 Shopify HTTP REST and GraphQL Client with OAuth 2.0 and Dropshipping Life-cycle Support.
 """
 
+import asyncio
 import json
 import logging
 import urllib.parse
